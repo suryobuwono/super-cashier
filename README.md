@@ -34,9 +34,9 @@
 ---
 
 ## Tools & Libraries
-- Python 3 — Core programming language
-- `tabulate` — For displaying clean and readable tables in CLI
-- `re` — For regex sanitization of user inputs
+- **Python 3** — Core programming language
+   - `tabulate` — For displaying clean and readable tables in CLI
+   - `re` — For regex sanitization of user inputs
 
 ---
 
@@ -78,7 +78,7 @@ A Jupyter Notebook file containing real-world test scenarios to demonstrate and 
 ### Key Design Choices
 - **Input Sanitization:** Regex removes unwanted characters (e.g., numbers from item names).
 - **Interactive Prompts:** Users are guided via terminal on-screen prompts instead of direct parameter inputs.
-- **Private Methods:** Internal methods like __update_item_name() handle specific updates under update_item().
+- **Private Methods:** Internal methods like `__update_item_name()` handle specific updates under `update_item()`.
 
 ---
 
@@ -119,7 +119,7 @@ Clear all items with `reset_transaction()`.
 
 ---
 
-## How to Run the Program Yourself
+## How to Run the Program
 
 1. Download both files:
    - `cashier.py`
@@ -128,6 +128,25 @@ Clear all items with `reset_transaction()`.
 3. Open `test_case_supercashier.ipynb` in **Jupyter Notebook** or **VS Code with Jupyter support**.
 4. Run the notebook cells step by step to explore and test all features.
 5. Follow on-screen prompts interactively to complete transactions.
+
+---
+
+## Limitations & Future Directions
+
+**1. Unit Price Assignment**
+   Currently, users must manually input the unit price for each item. In the future, the program should be integrated with a product pricing database, allowing users to simply input the item name and quantity. The system would then automatically assign the corresponding unit price and compute the total cost.
+
+**2. Item name Validation and Suggestions**
+   At present, item name validation is limited to input formatting and does not verify if the item actually exists in the supermarket's inventory. Future improvements should include intelligent suggestions for mistyped or ambiguous names. For example, if a user enters "chicken", which isn’t a recognized item, the program could suggest "fried chicken" or "grilled chicken" if those are available in stock.
+
+**3. Inventory Catalog Management**
+   Related to the previous point, a future version should include a searchable item catalog and real-time availability check. Additionally, supermarket admins should be able to manage this catalog—adding, removing, or editing items as needed.
+
+**4. Order Input Validation**
+   The current `check_order()` feature displays the cart contents but relies on users to verify their inputs. Future updates should enhance this by flagging potential anomalies, such as unusually high quantities (e.g., ordering 200 fried chickens), and prompting users to review before proceeding.
+
+**5. Advanced Admin Features**
+   At this stage, admin functionality is limited to viewing raw transaction data in dictionary format. Future enhancements could include analytics tools such as top-selling product rankings, transaction summaries, and visual sales dashboards for trend monitoring and decision-making.
 
 ---
 
